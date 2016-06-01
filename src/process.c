@@ -4,36 +4,37 @@
 #include <discriminant.h>
 
 const double eps = 1e-10;
-const short ERROR = -1;
-const short NO_ROOTS = 0;
-const short ONE_ROOT = 1;
-const short TWO_ROOTS = 2;
-
+/*
+ERROR = -1;
+NO ROOTS = 0;
+ONE ROOT = 1;
+TWO ROOTS = 2;
+*/
 int equal(double a, double b, double eps) 
 {
   return fabs(a - b) < eps;
 }
 
-short solve(double a, double b, double c, double *x1, double *x2) 
+int process(double a, double b, double c, double *x1, double *x2) 
 {
-  double r = discriminant(a, b, c);
-  if (r < 0)
+  double d = discriminant(a, b, c);
+  if (d < 0) //Если корней нет.
     {
-      return NO_ROOTS;
+      return 0;
     }
   
-  if (equal(r, 0, eps)) 
+  if (equal(d, 0, eps)) //Если корень один.
     {
       *x1 = -b / (2 / a);
-      return ONE_ROOT;
+      return 1;
     }
   
-  if (r > 0) 
+  if (d > 0) //Если два корня.
     {
-      *x1 = (-b - sqrt(r)) / (2 * a);
-      *x2 = (-b + sqrt(r)) / (2 * a);
-      return TWO_ROOTS;
+      *x1 = (-b - sqrt(d)) / (2 * a);
+      *x2 = (-b + sqrt(d)) / (2 * a);
+      return 2;
     }
   
-  return ERROR;
+  return -1;
 }

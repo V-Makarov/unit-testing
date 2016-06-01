@@ -6,8 +6,8 @@
 int main()
 {
   double a, b, c, x1, x2;
-  short fl = 5;
-
+  int result = 1337;
+  //Ввод данных
   printf("Квадратное уравнение это уравнение вида ax^2 + bx + c = 0\n");
   printf("Введите a, b, c\n");
   printf("a = ");
@@ -18,19 +18,20 @@ int main()
   scanf("%lf", &c);
   printf("\n");
   printf("%4.2fx^2 + %4.2fx + %4.2f = 0\n", a, b, c);
+  //Проверка
   if (a == 0)
     {
       printf("Это не квадратное уравнение!\n");
       return 0;
     }  
-  else
-    fl = solve(a, b, c, &x1, &x2);
-  
-  if (fl == 0)
+  else //запуск 
+    result = process(a, b, c, &x1, &x2);
+  //Вывод рез-тов
+  if (result == 0)
     printf("Нет действительных корней.\n");
-  else if (fl == 1)
+  else if (result == 1)
     printf("Только один корень: x = %4.2f\n", x1);
-  else if (fl == 2)
+  else if (result == 2)
     printf("Два корня: \n x1 = %4.2f\n x2 = %4.2f\n", x1, x2);
   return 0;
 }
