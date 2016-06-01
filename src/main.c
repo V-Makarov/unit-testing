@@ -17,9 +17,12 @@ int main()
   printf("\nc = ");
   scanf("%lf", &c);
   printf("\n");
-  
+  printf("%4.2fx^2 + %4.2fx + %4.2f = 0\n", a, b, c);
   if (a == 0)
-    printf("Это не квадратное уравнение!\n");
+    {
+      printf("Это не квадратное уравнение!\n");
+      return 0;
+    }  
   else
     fl = solve(a, b, c, &x1, &x2);
   
