@@ -10,6 +10,7 @@ NO ROOTS = 0;
 ONE ROOT = 1;
 TWO ROOTS = 2;
 */
+
 int equal(double a, double b, double eps) 
 {
   return fabs(a - b) < eps;

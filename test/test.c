@@ -4,9 +4,9 @@
 
 CTEST(test_suite, NO_ROOTS)
 {
-  const double a = 4;
-  const double b = 0;
-  const double c = 3;
+  const double a = 10;
+  const double b = 1;
+  const double c = 10;
   double x1, x2;
   
   int test = process(a, b, c, &x1, &x2);

@@ -6,7 +6,7 @@
 int main()
 {
   double a, b, c, x1, x2;
-  int result = 1337;
+  int result = -1337;
   //Ввод данных
   printf("Квадратное уравнение это уравнение вида ax^2 + bx + c = 0\n");
   printf("Введите a, b, c\n");
