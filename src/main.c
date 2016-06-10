@@ -3,6 +3,7 @@
 #include <math.h>
 #include <process.h>
 
+/*костыль на костыле*/
 int main()
 {
   double a, b, c, x1, x2;
